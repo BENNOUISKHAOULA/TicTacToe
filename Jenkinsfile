@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'kbiiis/docker-image-name'
+        DOCKER_IMAGE = 'kbiiis/tic-tac-toe-app'
         DOCKER_HUB_CREDENTIALS = 'dockerhub-credentials'
         SONARQUBE_SERVER = 'sonarqube'
     }

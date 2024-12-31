@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'kbiiis/tic-tac-toe-app'
         DOCKER_HUB_CREDENTIALS = 'dockerhub-credentials'
-        SONARQUBE_SERVER = 'sonarqube'
+        SONARQUBE_SERVER = 'sonarqube-token'
     }
 
     stages {

@@ -6,8 +6,8 @@
   },
   "version": "1.0.0",
   "devDependencies": {
-    "autoprefixer": "*",
-    "cssnano": "*",
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
     "grunt": "*",
     "grunt-cli": "*",
     "grunt-contrib-concat": "*",
@@ -28,14 +28,16 @@
     "karma-coverage": "*",
     "karma-jasmine": "*",
     "load-grunt-tasks": "*",
-    "typescript": "*",
-    "protractor": "*"
+    "postcss": "^8.4.49",
+    "protractor": "*",
+    "typescript": "*"
   },
   "scripts": {
     "postinstall": "webdriver-manager update",
     "prestart": "npm install",
     "start": "http-server -a localhost -p 9000 -c-1",
-    "test": "grunt"
+    "test": "grunt",
+    "build": "grunt"
   },
   "author": "Yoav Zibin"
 }

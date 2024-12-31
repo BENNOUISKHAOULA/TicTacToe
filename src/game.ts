@@ -40,7 +40,8 @@ module game {
     // I prefer to use appCache over serviceWorker
     // (because iOS doesn't support serviceWorker, so we have to use appCache)
     // I've added this code for a future where all browsers support serviceWorker (so we can deprecate appCache!)
-    if (!window.applicationCache && 'serviceWorker' in navigator) {
+    if (!(window as any).applicationCache
+    && 'serviceWorker' in navigator) {
       let n: any = navigator;
       log.log('Calling serviceWorker.register');
       n.serviceWorker.register('service-worker.js').then(function(registration: any) {

@@ -10,7 +10,8 @@
         "outDir": "ts_output_readonly_do_NOT_change_manually/",
         "sourceMap": true,
         "noLib": false,
-        "newLine": "CRLF"
+        "newLine": "CRLF",
+        "skipLibCheck": true
     },
     "filesGlob": [
         "./src/*.ts",

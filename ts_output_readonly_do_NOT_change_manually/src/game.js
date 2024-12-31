@@ -60,7 +60,7 @@ var game;
         // opacity between 0.5 and 0.7
         var opacity = 0.5 + 0.2 * ratio;
         return {
-            transform: "scale(" + scale + ", " + scale + ")",
+            transform: "scale(".concat(scale, ", ").concat(scale, ")"),
             opacity: "" + opacity,
         };
     }
@@ -131,7 +131,7 @@ var game;
         makeMove(move);
     }
     function makeMove(move) {
-        if (game.didMakeMove) {
+        if (game.didMakeMove) { // Only one move per updateUI
             return;
         }
         game.didMakeMove = true;
@@ -170,8 +170,8 @@ var game;
         return isMyTurn() && !isComputer();
     }
     function isMyTurn() {
-        return !game.didMakeMove &&
-            game.currentUpdateUI.turnIndex >= 0 &&
+        return !game.didMakeMove && // you can only make one move per updateUI.
+            game.currentUpdateUI.turnIndex >= 0 && // game is ongoing
             game.currentUpdateUI.yourPlayerIndex === game.currentUpdateUI.turnIndex; // it's my turn
     }
     function cellClicked(row, col) {

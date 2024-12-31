@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'kbiiis/tic-tac-toe-app'
         DOCKER_HUB_CREDENTIALS = 'dockerhub-credentials'
-        SONARQUBE_SERVER = 'sonarqube-token'
+        SONARQUBE_SERVER = 'sonarqube-token'  // Mise à jour avec l'ID du token SonarQube
     }
 
     stages {
@@ -25,7 +25,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('sonarqube-server-name') {
+                withSonarQubeEnv(SONARQUBE_SERVER) {  // Utilise la variable d'environnement SONARQUBE_SERVER
                     sh './gradlew sonarqube'
                 }
             }
